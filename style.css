@@ -1,0 +1,700 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* General Style */
+:root{
+    --title-text:black;
+    --bg-color:white;
+    --top-nav-color:white;
+    --p-color:rgb(85,85, 85);
+    --border-color:rgb(53 ,53 ,53);
+    --txt-color:rgb(34, 32, 32);
+    --txt-decoration:grey;
+    --details-border:rgb(163, 163, 163);
+}
+
+/* Dark Theme */
+.dark-theme {
+    --bg-color: #121212;
+    --title-text: white;
+    --top-nav-color: #1e1e1e;
+    --p-color: rgb(200, 200, 200);
+    --border-color: rgb(100, 100, 100);
+    --txt-color: white;
+    --txt-decoration: lightgrey;
+    --details-border: rgb(100, 100, 100);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--top-nav-color);
+}
+
+p{
+    color: var(--p-color);
+}
+
+a,.btn{
+    transition: all 300ms ease;
+}
+
+/* desktop nav */
+
+nav, .nav-links{
+    display: flex;
+}
+
+#desktop-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--bg-color);
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    animation: slideTop 1s ease-in-out forwards;
+}
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a{
+    color: var(--txt-color);
+    text-decoration: none;
+    text-decoration-color:var(--border-color);
+    position: relative;
+}
+
+a:hover{
+    color: var(--txt-decoration);
+    --webkit-text-underline-offset: 1rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start from the center */
+    bottom: 0; /* Position the underline at the bottom of the text */
+    width: 0; /* Initially, the underline has no width */
+    height: 3px; /* Set the thickness of the underline */
+    background-color: var(--txt-decoration); /* Use your desired underline color */
+    transition: all 0.3s ease; /* Smooth transition for the underline */
+    transform: translateX(-50%); /* Center the underline */
+}
+
+a:hover::after {
+    width: 100%; /* Expand the underline to full width on hover */
+}
+
+.logo{
+    font-size: 2rem;
+    text-decoration: none;
+    animation: slideRight 1s ease-in-out forwards;
+}
+
+.logo:hover{
+    cursor: default;
+    text-decoration: none;
+}
+
+#hamburg-nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--top-nav-color);
+    z-index: 100;
+}
+
+.hamburg-menu{
+    position: relative;
+    display: inline-block;
+}
+.hamburg-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburg-icon span{
+    height: 2px;
+    width: 100%;
+    background-color: var(--title-text);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: var(--top-nav-color);
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links a{
+    display: block;
+    padding: 10px;
+    color: var(--title-text);
+    text-decoration: none;
+    transition : all 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.menu-links li{
+    list-style: none;
+
+}
+
+.menu-links.open {
+    max-height: 500px;
+    padding: 10px 0;
+}
+
+.hamburg-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px , 5px);
+}
+
+.hamburg-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburg-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px , -5px);
+}
+
+.hamburg-icon span:first-child{
+    transform: none;
+}
+.hamburg-icon span:nth-child(2){
+    opacity: 1;
+}
+.hamburg-icon span:last-child{
+    transform: none;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 2.75vh;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    background-color: var(--border-color); /* Ensure this contrasts with the background */
+    color: var(--title-text); /* Ensure this contrasts with the button background */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    color: var(--top-nav-color);
+    display: flex;
+    padding: 0;
+    animation: slideTop 1s ease-in-out forwards;
+}
+
+#theme-toggle div{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 2.25rem;
+    text-align: center;
+    padding: 5px;
+}
+
+#theme-toggle div:last-child{
+    display: none;
+}
+
+.dark-theme #theme-toggle div:first-child{
+    display: none;
+}
+
+.dark-theme #theme-toggle div:last-child{
+    display: block;
+}
+
+#theme-toggle:hover {
+    background-color: var(--title-text); /* Ensure hover state is visible */
+    color: var(--bg-color);
+}
+
+
+
+/* sectons */
+section{
+    padding-top: 4vh;
+    height: 95vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container{
+    display: flex;
+}
+
+#profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 95vh;
+}
+
+.section-pic-container{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+    justify-content: center;
+    animation: slideBottom 1s ease-in-out forwards;
+    cursor: default;
+    color: var(--title-text);
+}
+
+.profile-pic:hover{
+    cursor: default;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    filter: drop-shadow(18px 10px 8px var(--title-text));
+}
+
+.section-text{
+    align-items: center;
+    text-align: center;
+    padding-top: 25vh;
+    padding-right: 2rem;
+}
+
+.section-text p{
+    font-weight: 600;
+
+}
+
+.section-text-p1{
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--txt-color);
+}
+.section-text-p2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.25rem;
+    color: var(--p-color);
+}
+
+.title{
+    font-size: 3rem;
+    text-align: center;
+    color: var(--title-text);
+}
+
+.socio-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: slideBottom 1s ease-in-out forwards;
+}
+
+.icon{
+    cursor: pointer;
+    height: 2.25rem;
+    font-size: 2.25rem; /* Adjust the size of the icons */
+    color: var(--title-text); /* Use the theme color */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.icon:hover {
+    color: var(--txt-decoration); /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.email-icon {
+    font-size: 2.5rem; /* Slightly larger for the email icon */
+}
+
+.linkedin-icon{
+    cursor: pointer;
+    border: var(--border-color) solid 0.1rem;
+    padding: 5px;
+    border-color: var(--border-color);
+    border-radius: 50%;
+}
+
+.github-icon{
+    cursor: pointer;
+    border: var(--border-color) solid 0.1rem;
+    padding: 5px;
+    border-color: var(--border-color);
+    border-radius: 50%;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    animation: slideRight 1s ease-in-out forwards;
+}
+
+.btn{
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+.btn-color1, .btn-color2{
+    border:var(--border-color) solid 0.1rem;
+} 
+
+.btn-color1:hover ,
+.btn-color2:hover{
+    cursor: pointer;
+}
+
+.btn-color1,
+.btn-color2:hover{
+    background-color: var(--border-color);
+    color: var(--top-nav-color);
+}
+
+.btn-color1:hover{
+    background: var(--title-text);
+}
+
+.btn-color2{
+    background: none;
+    color: var(--p-color);
+}
+
+.btn-color2:hover{
+    border: var(--title-text) solid 0.1rem;
+}
+
+.profile-txt{
+    animation: slideRight 1s ease-in-out forwards;
+}
+
+.profile-title{
+    animation: slideLeft 1s ease-in-out forwards;
+}
+
+.profile-anitxt{
+    animation: slideBottom 1s ease-in-out forwards;
+}
+
+/* about section
+ */
+
+#about{
+    position: relative;
+    padding-top: 9rem;
+}
+
+.about-containers{
+    gap: 2rem;
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+}
+
+.about-details-container{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.about-pic{
+    border-radius: 2rem;
+}
+
+.arrow-icon{
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+    display: none;
+}
+
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background: var(--top-nav-color);
+    border-radius: 2rem;
+    border: var(--border-color) solid 0.1rem;
+    text-align: center;
+    border-color: var(--details-border);
+}
+
+.details-container:hover{
+    cursor: default;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.details-container h3 ,
+.details-container img{
+    color: var(--title-text);
+}
+
+.section-container{
+    gap: 4rem;
+    height: 80%;
+}
+
+.section-pic-container{
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+/* Skill Section Styles */
+
+#experience{
+    padding-top: 9rem;
+}
+
+.experience-sub-title{
+    color: var(--p-color);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.experience-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-container{
+    display:flex ;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+}
+
+article{
+    display: flex;
+    width: 10rem;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+article .icon{
+    cursor: default;
+}
+
+/* project section */
+
+#projects{
+    padding-top: 7rem;
+}
+
+.color-container{
+    border-color: rgb(163, 163, 163);
+    background: var(--top-nav-color);
+}
+
+.project-img{
+    border-radius: 2rem;
+    width: 90%;
+    height: 90%;
+}
+
+.project-title{
+    margin: 1rem;
+    color: var(--title-text);
+}
+
+.project-btn{
+    color: var(--title-text);
+    border-color: rgb(163, 163, 163);
+}
+
+/* achievement section */
+
+#achievements{
+    padding-top: 5rem;
+}
+
+.achievements {
+    justify-content: center;
+    text-align: center;
+}
+
+#achievements h2 {
+    color: var(--title-text);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.achievement{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    border-bottom-color: rgb(85,85, 85);
+    text-align: center;
+    
+}
+
+.achievement h3 {
+    color: var(--title-text); 
+    font-size: 2rem;
+    padding-bottom: 10px;
+
+}
+
+.achievement p {
+    color: var(--p-color); 
+    font-size: 1rem;
+}
+
+
+/* contact page */
+
+#contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+.contact-info-upper-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    border: rgb(53 ,53 ,53) solid 0.1rem;
+    border-color: rgb(163, 163, 163);
+    background: var(--top-nav-color);
+    padding: 0.5rem;
+
+}
+
+.contact-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container p{
+    font-size: larger;
+}
+
+.a-link::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start from the center */
+    bottom: -5px; /* Position the underline at the bottom of the text */
+    width: 0; /* Initially, the underline has no width */
+    height: 3px; /* Set the thickness of the underline */
+    background-color: var(--txt-decoration); /* Use your desired underline color */
+    transition: all 0.3s ease; /* Smooth transition for the underline */
+    transform: translateX(-50%); /* Center the underline */
+}
+
+.contact-icon{
+    cursor: default;
+    height: 2rem;
+}
+
+.email-icon{
+    height: 2.5rem;
+}
+
+/* footer section */
+
+footer{
+    height: 25vh;
+    margin: 0;
+
+}
+
+footer p{
+    text-align: center;
+}
+
+/* keyframes section */
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    
+}
+@keyframes slideTop {
+    0%{
+        transform: translateY(-1000%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    
+}
+@keyframes slideBottom {
+    0%{
+        transform: translateY(1000%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    
+}

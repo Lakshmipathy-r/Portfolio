@@ -1,0 +1,137 @@
+        <section id="skill">
+          <p class="section-text-p1">Explore My</p>
+          <h1 class="title"> Skills </h1>
+          <div class="experience-details-container">
+            <div class="about-container">
+              <div class="details-container">
+                <!-- <h2 class="experience-sub-title">Front end Development</h2> -->
+                <div class="skills-grid">
+    
+                  <div class="skill-card">
+                    <i class="bx bxl-html5" style="color: rgb(216, 76, 45);"></i>
+                    <h3>HTML</h3>
+                    <p>Proficient in structuring web content.</p>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-card">
+                    <i class="bx bxl-css3" style="color: #147bbc;"></i>
+                    <h3>CSS</h3>
+                    <p>Skilled in styling and designing web pages.</p>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 85%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-card">
+                    <i class="bx bxl-javascript" style="color: rgb(221, 221, 49);"></i>
+                    <h3>JavaScript</h3>
+                    <p> Gaining experience in building interactive web applications.</p>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 70%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-card">
+                    <i class="bx bxl-python" style="color: #05466e;"></i>
+                    <h3>Python</h3>
+                    <p>Learning backend development and scripting.</p>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 75%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-card">
+                    <img src="./assets/logos/mysql_PNG23 (1).png" alt="MySQL" style="width: 40px; height: 40px;">
+                    <h3>MySQL</h3>
+                    <p>Skilled in database management and queries.</p>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 70%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .experience-details-container{
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+#skill {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5rem;
+    padding: 20px;
+    flex-direction: column;
+  }
+  
+  .skill-card {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  
+  .skill-card:hover{
+    transform: translateY(-10px);
+  }
+  
+  .skill-card i, .skill-card img {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+ }
+  
+  .skill-card p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .progress-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar .progress {
+    background: #147bbc;
+    height: 100%;
+    border-radius: 10px;
+  }
