@@ -26,7 +26,7 @@ Welcome to my personal portfolio repository! This site is a reflection of my jou
 | Frontend | Styling | Deployment |
 |----------|---------|------------|
 | HTML     | CSS     | GitHub Pages |
-| JavaScript | Flexbox/Grid | — |
+| JavaScript | Flexbox/Grid | GitHub |
 
 ---
 
