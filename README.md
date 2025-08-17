@@ -1,5 +1,3 @@
-Absolutely, Lakshmipathy! Here's a polished and engaging `README.md` tailored for your **Portfolio** GitHub repository. It highlights your skills, showcases the purpose of the portfolio, and invites visitors to explore your work and connect with you.
-
 ---
 
 # 🧑‍💼 Lakshmipathy – Developer Portfolio
