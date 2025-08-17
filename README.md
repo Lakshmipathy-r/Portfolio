@@ -35,9 +35,18 @@ Welcome to my personal portfolio repository! This site is a reflection of my jou
 
 ## 📸 UI Screenshots
 
-| 🏠 Home Page | 📂 Projects Section | 📬 Contact Form |
-|-------------|---------------------|----------------|
-| ![Home](https://github.com/Lakshmipathy-r/Portfolio/blob/main/screenshots/home.png?raw=true) | ![Projects](https://github.com/Lakshmipathy-r/Portfolio/blob/main/screenshots/projects.png?raw=true) | ![Contact](https://github.com/Lakshmipathy-r/Portfolio/blob/main/screenshots/contact.png?raw=true) |
+ 🏠 Home Page <br><br>
+ ![imagealt](https://github.com/Lakshmipathy-r/Portfolio/blob/main/Screenshots/Screenshot%202025-08-17%20134728.png?raw=true)<br><br>
+ 👨‍💻 About Me<br><br>
+ ![imagealt](https://github.com/Lakshmipathy-r/Portfolio/blob/main/Screenshots/Screenshot%202025-08-17%20134737.png?raw=true)<br><br>
+ 🛠️ Skills<br><br>
+ ![imagealt](https://github.com/Lakshmipathy-r/Portfolio/blob/main/Screenshots/Screenshot%202025-08-17%20134746.png?raw=true)<br><br>
+ 🚀 Projects<br><br>
+ ![imagealt](https://github.com/Lakshmipathy-r/Portfolio/blob/main/Screenshots/Screenshot%202025-08-17%20134756.png?raw=true)<br><br>
+ 🎯 Achievements<br><br>
+ ![imagealt](https://github.com/Lakshmipathy-r/Portfolio/blob/main/Screenshots/Screenshot%202025-08-17%20134808.png?raw=true)<br><br>
+ 📬 Contact<br><br>
+ ![imagealt](https://github.com/Lakshmipathy-r/Portfolio/blob/main/Screenshots/Screenshot%202025-08-17%20134819.png?raw=true)<br><br>
 
 ---
 
