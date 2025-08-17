@@ -1,4 +1,3 @@
----
 
 # 🧑‍💼 Lakshmipathy – Developer Portfolio
 
